@@ -1,0 +1,422 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Prof. Nirmala Mahesh Thorwe - Resume</title>
+  <!-- Import TailwindCSS for utility-first styling -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <!-- Font Awesome for icons -->
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+  />
+  <style>
+    @import url("https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&family=Montserrat:wght@600;700&display=swap");
+
+    body {
+      font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+      font-size: 14px;
+      line-height: 1.42857143;
+      color: #333;
+      background: #fff;
+      min-height: 100vh;
+    }
+
+    /* Main theme colors: red and white */
+    :root {
+      --main-red: #940c0c; /* Tailwind red-600 */
+      --main-red-dark: #940c0c; /* Tailwind red-700 */
+      --main-white: #ffffff;
+      --main-gray-light: #f9fafb;
+      --main-gray-lighter: #fef2f2;
+    }
+
+    .hero {
+      background: linear-gradient(135deg, var(--main-red) 0%, var(--main-red-dark) 100%);
+      color: var(--main-white);
+      padding: 3rem 2rem;
+      text-align: center;
+      border-radius: 0 0 50% 50% / 50%;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero h1 {
+      font-family: "Montserrat", sans-serif;
+      font-size: 3rem;
+      margin-bottom: 0.5rem;
+      animation: fadeInUp 1s ease-out;
+    }
+
+    .hero p {
+      font-size: 1.2rem;
+      margin-bottom: 1.5rem;
+      opacity: 0.9;
+    }
+
+    .section {
+      padding: 3rem 2rem;
+      margin-bottom: 2rem;
+      border-radius: 15px;
+      box-shadow: 0 10px 30px rgba(220, 38, 38, 0.15);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      background: var(--main-white);
+      color: #1f2937; /* Tailwind gray-800 */
+    }
+
+    .section:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 20px 40px rgba(220, 38, 38, 0.3);
+    }
+
+    .skills-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+      gap: 1rem;
+    }
+
+    .skill-card {
+      background: var(--main-gray-lighter);
+      padding: 1.5rem;
+      border-radius: 10px;
+      text-align: center;
+      box-shadow: 0 5px 15px rgba(220, 38, 38, 0.1);
+      transition: transform 0.3s ease;
+      color: #b91c1c; /* red-700 */
+    }
+
+    .skill-card:hover {
+      transform: scale(1.05);
+      background: var(--main-red);
+      color: var(--main-white);
+      box-shadow: 0 8px 20px rgba(185, 28, 28, 0.5);
+    }
+
+    .experience-item,
+    .education-item,
+    .publication-item,
+    .workshop-item,
+    .training-item,
+    .certification-item {
+      background: var(--main-gray-lighter);
+      margin-bottom: 1.5rem;
+      padding: 1.5rem;
+      border-radius: 10px;
+      box-shadow: 0 5px 15px rgba(220, 38, 38, 0.1);
+      position: relative;
+      color: #7f1d1d; /* red-900 */
+    }
+
+    .experience-item::before,
+    .education-item::before,
+    .publication-item::before,
+    .workshop-item::before,
+    .training-item::before,
+    .certification-item::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 5px;
+      height: 100%;
+      background: linear-gradient(to bottom, var(--main-red), var(--main-red-dark));
+      border-radius: 5px 0 0 5px;
+    }
+
+    .contact-info {
+      display: flex;
+      justify-content: center;
+      gap: 2rem;
+      flex-wrap: wrap;
+      color: #7f1d1d; /* red-900 */
+    }
+
+    .contact-item {
+      text-align: center;
+      color: #7f1d1d;
+      transition: color 0.3s ease;
+    }
+
+    .contact-item:hover {
+      color: var(--main-red);
+    }
+
+    .typing-effect {
+      overflow: hidden;
+      white-space: nowrap;
+      animation: typing 3s ease-in-out, blink-caret 0.75s step-end infinite;
+      display: inline-block;
+      max-width: 100%;
+      color: var(--main-white);
+    }
+
+    .typing-effect::after {
+      content: "|";
+    }
+
+    @keyframes fadeInUp {
+      from {
+        opacity: 0;
+        transform: translateY(30px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @keyframes typing {
+      from {
+        width: 0;
+      }
+      to {
+        width: 100%;
+      }
+    }
+
+    @keyframes blink-caret {
+      from,
+      to {
+        border-color: transparent;
+      }
+      50% {
+        border-color: var(--main-white);
+      }
+    }
+
+    .particle {
+      position: absolute;
+      width: 10px;
+      height: 10px;
+      background: rgba(255, 255, 255, 0.7);
+      border-radius: 50%;
+      animation: float 6s ease-in-out infinite;
+    }
+
+    @keyframes float {
+      0%,
+      100% {
+        transform: translateY(0px);
+      }
+      50% {
+        transform: translateY(-20px);
+      }
+    }
+
+    @media (max-width: 768px) {
+      .hero h1 {
+        font-size: 2.5rem;
+      }
+      .section {
+        padding: 2rem 1rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <!-- Hero Section -->
+  <header class="hero">
+    <div class="container mx-auto">
+      <h1 class="typing-effect">Prof. Nirmala Mahesh Thorwe</h1>
+      <p>Experienced Computer Engineering Professional | Researcher | Educator</p>
+      <img
+        src="NT.jpg"
+        alt="Professional headshot of Prof. Nirmala Mahesh Thorwe"
+        class="mx-auto mt-4 rounded-full border-4 border-white w-32 h-32 object-cover"
+      />
+      <p class="mt-2 font-semibold">Experience: 15+ years</p>
+      <p class="font-semibold">Education: MTech – IT, MBA - HR</p>
+    </div>
+    <!-- Animated Particles -->
+    <div class="particle" style="top: 10%; left: 20%; animation-delay: 0s"></div>
+    <div class="particle" style="top: 20%; left: 80%; animation-delay: 1s"></div>
+    <div class="particle" style="top: 40%; left: 15%; animation-delay: 2s"></div>
+    <div class="particle" style="top: 60%; left: 85%; animation-delay: 3s"></div>
+  </header>
+
+  <!-- About Section -->
+  <section class="section container mx-auto">
+    <h2 class="text-3xl font-bold mb-4 text-center" style="color: var(--main-red);">
+      <i class="fas fa-user-circle mr-2"></i>About Me
+    </h2>
+    <p class="text-lg text-center leading-relaxed max-w-4xl mx-auto text-justify">
+      Doctorate in Computer Engineering (Honoris Causa) - 2024. Active member of The TechHub, Sahyadri Education,
+      Brightedge Multimedia Services, Turnkey Edgemakers, and HRidhaan Publication. Passionate about research,
+      education, and advancing technology in computer engineering.
+    </p>
+  </section>
+
+  <!-- Core Competency Section -->
+  <section class="section container mx-auto" style="background: var(--main-gray-lighter);">
+    <h2 class="text-3xl font-bold mb-6 text-center" style="color: var(--main-red);">
+      <i class="fas fa-cogs mr-2"></i>Core Competency & Programming Skills
+    </h2>
+    <div class="skills-grid">
+      <div class="skill-card">
+        <i class="fas fa-code text-4xl mb-2"></i>
+        <h3 class="text-xl font-semibold">Programming</h3>
+        <p>C, C++, PL-SQL, VB.net, JAVA</p>
+      </div>
+      <div class="skill-card">
+        <i class="fas fa-robot text-4xl mb-2"></i>
+        <h3 class="text-xl font-semibold">Subjects</h3>
+        <p>Ad hoc Networking, Artificial Intelligence (AI)</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Achievements Section -->
+  <section class="section container mx-auto">
+    <h2 class="text-3xl font-bold mb-6 text-center" style="color: var(--main-red);">
+      <i class="fas fa-trophy mr-2"></i>Profile & Achievements
+    </h2>
+    <div class="experience-item max-w-4xl mx-auto">
+      <ul class="list-disc list-inside space-y-2">
+        <li>Doctorate in Computer Engineering (Honoris Causa) - 2024</li>
+        <li>
+          World Records for Largest Rangoli Pattern (Shivrajyabhishek Rangoli, Sangli, Maharashtra, India) -
+          Guinness World Records, Limca Book of Records - 2019
+        </li>
+        <li>
+          Approval as Assistant Professor (Full Time) for Computer Engineering w.e.f. 16.12.2013 by University
+          of Pune
+        </li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- Publications Section -->
+  <section class="section container mx-auto" style="background: var(--main-gray-lighter);">
+    <h2 class="text-3xl font-bold mb-6 text-center" style="color: var(--main-red);">
+      <i class="fas fa-book-open mr-2"></i>Publications & Books
+    </h2>
+    <div class="publication-item max-w-4xl mx-auto">
+      <p class="font-semibold mb-2">Publications:</p>
+      <ul class="list-disc list-inside mb-4">
+        <li>National: 3</li>
+        <li>International: 4</li>
+      </ul>
+      <p class="font-semibold mb-2">Books:</p>
+      <ul class="list-disc list-inside">
+        <li>
+          <strong>‘Scattered Musings’</strong> | ISBN 978-81-942193-2-3
+        </li>
+        <li>
+          <strong>‘The COMEBACK: An afterlife fun’</strong> | ISBN 978-81-942193-4-1
+        </li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- Workshops Section -->
+  <section class="section container mx-auto">
+    <h2 class="text-3xl font-bold mb-6 text-center" style="color: var(--main-red);">
+      <i class="fas fa-chalkboard-teacher mr-2"></i>Workshops & FDPs
+    </h2>
+    <div class="workshop-item max-w-4xl mx-auto">
+      <ul class="list-disc list-inside space-y-2">
+        <li>
+          FDP - Writing Research Paper in Q1 & Q2 Journals - E&ICT Academy IIT Guwahati in association with Dr.
+          D.Y. Patil Dnyan Prasad University's School of Management and Research, Pune
+        </li>
+        <li>FDP - Outcome-Based Education: JSPM's BSIOTR, Pune</li>
+        <li>FDP - IBM-UML: JSPM's BSIOTR, Pune</li>
+        <li>FDP - MATLAB: Sanghavi Institute of Technology, Indore</li>
+        <li>Workshop on Hacking by Ankit Fadia</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- Trainings Section -->
+  <section class="section container mx-auto" style="background: var(--main-gray-lighter);">
+    <h2 class="text-3xl font-bold mb-6 text-center" style="color: var(--main-red);">
+      <i class="fas fa-tools mr-2"></i>Trainings
+    </h2>
+    <div class="training-item max-w-4xl mx-auto">
+      <ul class="list-disc list-inside space-y-2">
+        <li>SMRITI NETCOM, Bhopal: Networking and its applications</li>
+        <li>BSNL, Bhopal: G.M. Services</li>
+        <li>ZENITH INFOTECH, Bhopal: VB.net</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- Certifications Section -->
+  <section class="section container mx-auto">
+    <h2 class="text-3xl font-bold mb-6 text-center" style="color: var(--main-red);">
+      <i class="fas fa-certificate mr-2"></i>Online Certifications & Training
+    </h2>
+    <div class="certification-item max-w-4xl mx-auto">
+      <ul class="list-disc list-inside space-y-2">
+        <li>
+          FDP - Generative AI and Prompt Engineering organized by Khalsa College for Women, Ludhiana
+        </li>
+        <li>Generative AI and Prompt Engineering organized by Khalsa College for Women, Ludhiana</li>
+        <li>
+          FDP - Integrated Approaches to Real-Time IoT Data Analytics and Decision Making Using Lightweight
+          Deep Learning Models, organized by IIIT Kottayam Kerala, in association with NIT Kurukshetra,
+          Haryana
+        </li>
+        <li>Skill course - AI for All by Intel Technology India Private Limited</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- Contact Section -->
+  <section class="section container mx-auto" style="background: var(--main-white);">
+    <h2 class="text-3xl font-bold mb-6 text-center" style="color: var(--main-red);">
+      <i class="fas fa-envelope mr-2"></i>Contact
+    </h2>
+    <div class="contact-info max-w-4xl mx-auto">
+      <div class="contact-item">
+        <i class="fas fa-envelope text-3xl mb-2"></i>
+        <p>nirmala.thorwe@pcu.edu.in.com</p>
+      </div>
+      <div class="contact-item">
+        <i class="fas fa-phone text-3xl mb-2"></i>
+        <p>+91 880 597 6107</p>
+      </div>
+      <div class="contact-item">
+        <i class="fab fa-linkedin text-3xl mb-2"></i>
+        <p>linkedin.com/in/nirmala-thorwe-43a16041/</p>
+      </div>
+    </div>
+  </section>
+
+  <footer class="bg-red-700 text-white py-6 mt-8">
+    <div class="container mx-auto text-center">
+      <p>&copy; 2025 Prof. Nirmala Mahesh Thorwe. Crafted with creativity and code.</p>
+    </div>
+  </footer>
+
+  <script>
+    // Simple JavaScript for interactivity
+    window.addEventListener("DOMContentLoaded", (event) => {
+      // Add scroll animation to sections
+      const sections = document.querySelectorAll(".section");
+      const observer = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              entry.target.style.opacity = 1;
+              entry.target.style.transform = "translateY(0)";
+            }
+          });
+        },
+        { threshold: 0.1 }
+      );
+
+      sections.forEach((section) => {
+        section.style.opacity = 0;
+        section.style.transform = "translateY(30px)";
+        section.style.transition = "opacity 0.5s ease, transform 0.5s ease";
+        observer.observe(section);
+      });
+
+      // Typing effect for hero title
+      // Note: The CSS animation handles the basic typing effect
+    });
+  </script>
+</body>
+</html>
